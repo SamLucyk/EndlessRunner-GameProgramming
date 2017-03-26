@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{6E0C5DCE-DDAC-CA2C-034F-45292D3E70AC}</ProjectGuid>
+    <ProjectGuid>{606E1095-CD49-9C75-196A-767055EA3DB2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -46,10 +46,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scenes\CameraMotor.cs" />
+     <Compile Include="Assets\Scripts\CameraMotor.cs" />
+     <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\PlayerAnimator.cs" />
      <Compile Include="Assets\Scripts\PlayerMotor.cs" />
      <Compile Include="Assets\Scripts\TileManager.cs" />
+     <Compile Include="Assets\TimeManager.cs" />
      <None Include="Assets\StoreAssets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_eye.shader" />
      <None Include="Assets\StoreAssets\UnityChan\Models\UnityChanShader\Shader\Unitychan_chara_fuku.shader" />
      <None Include="Assets\StoreAssets\UnityChan\license.txt" />
