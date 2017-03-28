@@ -110,7 +110,7 @@ public class TileManager : MonoBehaviour {
 	private int getTimeDeterminedTileIndex(){
 		countTime = GameObject.Find ("TimeManager").GetComponent<TimeManager> ().getTime ();
 		print ("Getting Tile" + countTime);
-		float changeTime = 15.00f;
+		float changeTime = 3.00f;
 		if (countTime < changeTime) {
 			return 0;
 		} else if (countTime < changeTime * 2) {
