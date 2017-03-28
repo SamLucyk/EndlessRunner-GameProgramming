@@ -23,4 +23,8 @@ public class TimeManager : MonoBehaviour {
 		countTimeText.text = "Time: " +string.Format("{0:00.00}", countTime) + "s";
 		 
 	}
+
+	public float getTime(){
+		return countTime;
+	}
 }

@@ -17,16 +17,14 @@ public class PlayerAnimator : MonoBehaviour {
 		if(Input.GetKeyDown (KeyCode.Space)){
 
 			anim.Play ("JUMP00B",-1, 0f);
-			print ("SPACE PRESSED!");
 
 		}
-		if (Input.GetKeyDown (KeyCode.LeftArrow) || Input.GetKeyDown ("a")) {
+		if ((Input.GetKeyDown (KeyCode.LeftArrow) || Input.GetKeyDown ("a")) && (!(anim.GetCurrentAnimatorStateInfo(0).IsName("SLIDE00")) && !(anim.GetCurrentAnimatorStateInfo(0).IsName("JUMP00B")))) {
 			anim.Play ("RUN00_L", -1, 0f);
-			print ("pressed left");
 
 		}
 
-		if (Input.GetKeyDown (KeyCode.RightArrow) || Input.GetKeyDown ("d")){
+		if ((Input.GetKeyDown (KeyCode.RightArrow) || Input.GetKeyDown ("d")) && (!(anim.GetCurrentAnimatorStateInfo(0).IsName("SLIDE00")) && !(anim.GetCurrentAnimatorStateInfo(0).IsName("JUMP00B")))){
 			anim.Play ("RUN00_R", -1, 0f);
 		} 
 
