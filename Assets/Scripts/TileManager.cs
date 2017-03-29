@@ -14,7 +14,7 @@ public class TileManager : MonoBehaviour {
 	public bool timeDetermined = false;
 	public int tilesOnScreen = 9;
 	public float spawnZ = -20.0f;
-	private int tileLength = 20;
+	public int tileLength = 20;
 	private float safeZone = 60;
 
 	private Transform playerTransform;
@@ -110,7 +110,7 @@ public class TileManager : MonoBehaviour {
 	private int getTimeDeterminedTileIndex(){
 		countTime = GameObject.Find ("TimeManager").GetComponent<TimeManager> ().getTime ();
 		print ("Getting Tile" + countTime);
-		float changeTime = 3.00f;
+		float changeTime = 9.00f;
 		if (countTime < changeTime) {
 			return 0;
 		} else if (countTime < changeTime * 2) {
