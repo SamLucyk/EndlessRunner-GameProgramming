@@ -14,6 +14,7 @@ public class PlayerAnimator : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+
 		if(Input.GetKeyDown (KeyCode.Space)){
 
 			anim.Play ("JUMP00B",-1, 0f);

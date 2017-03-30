@@ -2,9 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
-	
+
+	//Time
+	public TimeManager timeManager;
+
+	//GAME OVER UI scence
+	public GameObject gameOverUI;
+
 	// Settings
 	public int startingHealth;
 	public float startSpeed;
@@ -33,7 +40,10 @@ public class PlayerController : MonoBehaviour {
 	private int hurtAmount;
 	private float hurtInterval;
 	private float timeToHurt;
-	private bool gameOver;
+	public static bool gameOver;
+
+	//Animator
+	public PlayerAnimator playerAnimator;
 
 
 	// Use this for initialization
@@ -78,8 +88,13 @@ public class PlayerController : MonoBehaviour {
 
 			anim.Play ("LOSE00");
 
-
-
+			//when game end go to scence "GameOver"
+			//SceneManager.LoadScene ("GameOver");
+			this.enabled = false;
+			this.timeManager.enabled = false;
+			this.playerAnimator.enabled = false;
+			//active the gameover ui
+			this.gameOverUI.SetActive(true);
 
 			// GAME OVER ACTIONS OVER //
 		} else {
