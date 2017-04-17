@@ -24,8 +24,11 @@ public class TileManager : MonoBehaviour {
 
 	private float countTime;
 
+
+
 	// Use this for initialization
 	void Start () {
+		
 		levelOptions = new List<float> ();
 		levelOptions.Add (.5f);
 		levelOptions.Add (5f);
@@ -125,5 +128,7 @@ public class TileManager : MonoBehaviour {
 			return 5;
 		}
 	}
+
+
 		
 }
