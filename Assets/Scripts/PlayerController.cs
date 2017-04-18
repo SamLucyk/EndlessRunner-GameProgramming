@@ -49,6 +49,10 @@ public class PlayerController : MonoBehaviour {
 	public Text countText;
 	private float score;
 
+	//audio 
+	public AudioSource coinSound;
+
+
 	// Use this for initialization
 	void Start () {
 		//add score counter
@@ -67,6 +71,13 @@ public class PlayerController : MonoBehaviour {
 		hurtAmount = 0;
 		currentHealth = startingHealth;
 		gameOver = false;
+
+		//add sound effects for coins
+		coinSound = (AudioSource) gameObject.AddComponent <AudioSource>();
+		AudioClip coinClip;
+		coinClip = (AudioClip)Resources.Load ("coin-drop-1");
+		coinSound.clip = coinClip;
+		coinSound.loop = false;
 	}
 
 	// Update is called once per frame
@@ -227,6 +238,8 @@ public class PlayerController : MonoBehaviour {
 			other.gameObject.SetActive (false);
 			score += 1;
 			countScore ();
+			//play pickup coin sound
+			coinSound.Play();
 		} else {
 
 		}
