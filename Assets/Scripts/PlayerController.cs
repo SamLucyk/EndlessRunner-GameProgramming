@@ -45,9 +45,20 @@ public class PlayerController : MonoBehaviour {
 	//Animator
 	public PlayerAnimator playerAnimator;
 
+	//display texts
+	public Text countText;
+	private float score;
+
+	//audio 
+	public AudioSource coinSound;
+
 
 	// Use this for initialization
 	void Start () {
+		//add score counter
+		score = 0;
+		countScore ();
+
 		rb = GetComponent<Rigidbody> ();
 		anim = GetComponent<Animator> ();
 		playerCollider = GetComponent<CapsuleCollider> ();
@@ -60,6 +71,13 @@ public class PlayerController : MonoBehaviour {
 		hurtAmount = 0;
 		currentHealth = startingHealth;
 		gameOver = false;
+
+		//add sound effects for coins
+		coinSound = (AudioSource) gameObject.AddComponent <AudioSource>();
+		AudioClip coinClip;
+		coinClip = (AudioClip)Resources.Load ("coin-drop-1");
+		coinSound.clip = coinClip;
+		coinSound.loop = false;
 	}
 
 	// Update is called once per frame
@@ -211,6 +229,25 @@ public class PlayerController : MonoBehaviour {
 				gameOver = true;
 			}
 		}
+
+	}
+
+	//When hit coin score plus one
+	void OnTriggerEnter(Collider other) {
+		if (other.gameObject.tag == "Coin") {
+			other.gameObject.SetActive (false);
+			score += 1;
+			countScore ();
+			//play pickup coin sound
+			coinSound.Play();
+		} else {
+
+		}
+	}
+
+	//count the score for player
+	void countScore() {
+		countText.text = "Score: " + score.ToString();
 
 	}
 

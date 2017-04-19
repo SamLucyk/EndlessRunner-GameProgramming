@@ -24,8 +24,11 @@ public class TileManager : MonoBehaviour {
 
 	private float countTime;
 
+
+
 	// Use this for initialization
 	void Start () {
+		
 		levelOptions = new List<float> ();
 		levelOptions.Add (.5f);
 		levelOptions.Add (5f);
@@ -84,7 +87,6 @@ public class TileManager : MonoBehaviour {
 		// Random Y Level
 		if (randomYLevel) {
 			int levelIndex = Random.Range (0,2);
-			print (levelIndex);
 			temp.y = levelOptions [levelIndex];
 		}
 
@@ -109,7 +111,6 @@ public class TileManager : MonoBehaviour {
 
 	private int getTimeDeterminedTileIndex(){
 		countTime = GameObject.Find ("TimeManager").GetComponent<TimeManager> ().getTime ();
-		print ("Getting Tile" + countTime);
 		float changeTime = 9.00f;
 		if (countTime < changeTime) {
 			return 0;
@@ -125,5 +126,7 @@ public class TileManager : MonoBehaviour {
 			return 5;
 		}
 	}
+
+
 		
 }
